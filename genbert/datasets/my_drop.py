@@ -24,7 +24,7 @@ from genbert.util import (ANSWER_GENERATION, ANSWER_SPAN, END_SYMBOL, SEP,
 logger = logging.getLogger(__name__)
 
 
-@DatasetReader.register("my_drop")
+@DatasetReader.register("my_mini_drop")
 class DropReader(DatasetReader):
 
     def __init__(
@@ -71,7 +71,7 @@ class DropReader(DatasetReader):
             dataset = json.load(dataset_file)
         logger.info("Reading the dataset")
         kept_count, skip_count = 0, 0
-        examples = dataset.items()
+        examples = dataset.items()# load json
 
         if self.shuffle:
             logger.info("Shuffling the dataset")
